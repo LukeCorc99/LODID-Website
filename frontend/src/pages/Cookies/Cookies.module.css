@@ -1,0 +1,44 @@
+.page {
+  min-height: calc(100vh - 90px - 95px);
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 60px 40px;
+  background: var(--light-cream);
+  text-align: center;
+}
+
+.page h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--dark-navy);
+  letter-spacing: -1px;
+}
+
+.page p {
+  font-size: 18px;
+  color: var(--text-light);
+}
+
+@media (max-width: 1300px) {
+  .page {
+    margin-top: 70px;
+  }
+
+  .page h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page h1 {
+    font-size: 32px;
+  }
+
+  .page p {
+    font-size: 16px;
+  }
+}

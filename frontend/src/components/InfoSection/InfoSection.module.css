@@ -1,0 +1,80 @@
+.infoSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: white;
+}
+
+.infoCard {
+  padding: 80px 40px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.infoCard:nth-child(1) {
+  background: var(--light-cream);
+}
+
+.infoCard:nth-child(2) {
+  background: var(--white);
+}
+
+.infoCard:nth-child(3) {
+  background: var(--light-cream);
+}
+
+.infoCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.infoCard h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+}
+
+.infoCard p {
+  color: var(--text-light);
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.infoBtn {
+  background: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  padding: 15px 35px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.infoBtn:hover {
+  background: var(--dark-navy);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(45, 49, 66, 0.3);
+}
+
+@media (max-width: 968px) {
+  .infoSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .infoCard {
+    cursor: default;
+  }
+
+  .infoCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
