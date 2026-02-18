@@ -1,44 +1,270 @@
 .page {
-  min-height: calc(100vh - 90px - 95px);
   margin-top: 90px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 60px 40px;
-  background: var(--light-cream);
+}
+
+/* ── Hero Banner ─────────────────────────────── */
+.heroBanner {
+  background: var(--dark-navy);
+  padding: 80px 40px;
   text-align: center;
 }
 
-.page h1 {
-  font-size: 56px;
+.heroBannerInner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroEyebrow {
+  font-size: 13px;
   font-weight: 700;
-  color: var(--dark-navy);
-  letter-spacing: -1px;
+  letter-spacing: 4px;
+  color: var(--primary-orange);
+  margin-bottom: 16px;
 }
 
-.page p {
+.heroTitle {
+  font-size: 80px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.heroSubtitle {
   font-size: 18px;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
 }
 
+/* ── Story Carousel ──────────────────────────── */
+.storySection {
+  background: var(--light-cream);
+  padding: 80px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.arrowBtn {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--dark-navy);
+  background: transparent;
+  color: var(--dark-navy);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.arrowBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.arrowBtn:hover {
+  background: var(--dark-navy);
+  color: var(--white);
+}
+
+.slide {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 50px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 60px 50px;
+  box-shadow: 0 4px 30px rgba(45, 49, 66, 0.08);
+  transition: opacity 0.2s ease;
+  min-height: 280px;
+}
+
+.slide.fading {
+  opacity: 0;
+}
+
+.chapterNumber {
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--primary-orange);
+  line-height: 1;
+  opacity: 0.15;
+  letter-spacing: -4px;
+  user-select: none;
+}
+
+.chapterContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.year {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--primary-orange);
+}
+
+.chapterTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--dark-navy);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.chapterBody {
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.75;
+  max-width: 540px;
+}
+
+/* ── Indicators ──────────────────────────────── */
+.indicators {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.indicator {
+  width: 40px;
+  height: 4px;
+  background: rgba(45, 49, 66, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.indicatorActive {
+  background: var(--primary-orange);
+  width: 60px;
+}
+
+.indicator:hover {
+  background: var(--dark-navy);
+}
+
+/* ── Closing Section ─────────────────────────── */
+.closingSection {
+  background: var(--primary-orange);
+  padding: 70px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.closingQuote {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.closingText {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.3px;
+}
+
+/* ── Responsive ──────────────────────────────── */
 @media (max-width: 1300px) {
   .page {
     margin-top: 70px;
   }
 
-  .page h1 {
-    font-size: 42px;
+  .heroTitle {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 30px;
+  }
+
+  .chapterNumber {
+    font-size: 72px;
+  }
+
+  .carouselWrapper {
+    gap: 12px;
+  }
+
+  .arrowBtn {
+    width: 42px;
+    height: 42px;
   }
 }
 
 @media (max-width: 600px) {
-  .page h1 {
+  .heroBanner {
+    padding: 60px 24px;
+  }
+
+  .heroTitle {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .heroSubtitle {
+    font-size: 15px;
+  }
+
+  .storySection {
+    padding: 50px 16px 40px;
+  }
+
+  .carouselWrapper {
+    gap: 8px;
+  }
+
+  .arrowBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrowBtn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .chapterTitle {
+    font-size: 24px;
+  }
+
+  .chapterBody {
+    font-size: 15px;
+  }
+
+  .closingQuote {
     font-size: 32px;
   }
 
-  .page p {
-    font-size: 16px;
+  .closingText {
+    font-size: 15px;
   }
 }
