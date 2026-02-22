@@ -1,7 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import styles from './Footer.module.css'
+import type { ModalType } from '../InfoModal'
 
-function Footer() {
+interface FooterProps {
+  onOpenModal: (type: ModalType) => void
+}
+
+function Footer({ onOpenModal }: FooterProps) {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? `${styles.footerLink} ${styles.footerLinkActive}` : styles.footerLink
 
@@ -16,11 +21,11 @@ function Footer() {
           <span className={styles.separator}>|</span>
           <NavLink to="/work-at-lodid" className={linkClass}>WORK AT LODID</NavLink>
           <span className={styles.separator}>|</span>
-          <NavLink to="/allergens" className={linkClass}>ALLERGENS</NavLink>
+          <button className={styles.footerButton} onClick={() => onOpenModal('allergens')}>ALLERGENS</button>
           <span className={styles.separator}>|</span>
-          <NavLink to="/privacy" className={linkClass}>PRIVACY</NavLink>
+          <button className={styles.footerButton} onClick={() => onOpenModal('privacy')}>PRIVACY</button>
           <span className={styles.separator}>|</span>
-          <NavLink to="/cookies" className={linkClass}>COOKIES</NavLink>
+          <button className={styles.footerButton} onClick={() => onOpenModal('cookies')}>COOKIES</button>
         </div>
         <div className={styles.socialIcons}>
           <a href="https://www.tiktok.com/@carrollsbar?lang=en" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="TikTok">

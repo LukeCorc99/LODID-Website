@@ -1,12 +1,14 @@
 import { NavLink, Link } from 'react-router-dom'
 import styles from './MobileMenu.module.css'
+import type { ModalType } from '../InfoModal'
 
 interface MobileMenuProps {
   isOpen: boolean
   onClose: () => void
+  onOpenModal: (type: ModalType) => void
 }
 
-function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+function MobileMenu({ isOpen, onClose, onOpenModal }: MobileMenuProps) {
   const navClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? `${styles.mobileNavLink} ${styles.mobileNavLinkActive}` : styles.mobileNavLink
 
@@ -17,7 +19,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <NavLink to="/menu" className={navClass} onClick={onClose}>MENU</NavLink>
         <NavLink to="/work-at-lodid" className={navClass} onClick={onClose}>WORK AT LODID</NavLink>
         <NavLink to="/our-story" className={navClass} onClick={onClose}>OUR STORY</NavLink>
-        <NavLink to="/contact" className={navClass} onClick={onClose}>CONTACT</NavLink>
+        <button className={styles.mobileNavButton} onClick={() => { onOpenModal('contact'); onClose() }}>CONTACT</button>
       </nav>
       <div className={styles.mobileButtons}>
         <Link to="/collection" className={`${styles.orderBtn} ${styles.collectionBtn}`} onClick={onClose}>

@@ -1,13 +1,15 @@
 import { NavLink, Link } from 'react-router-dom'
 import styles from './Header.module.css'
 import lodidLogo from '../../assets/lodid logo.png'
+import type { ModalType } from '../InfoModal'
 
 interface HeaderProps {
   isMenuOpen: boolean
   onMenuToggle: () => void
+  onOpenModal: (type: ModalType) => void
 }
 
-function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
+function Header({ isMenuOpen, onMenuToggle, onOpenModal }: HeaderProps) {
   const navClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
 
@@ -22,7 +24,7 @@ function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
         <NavLink to="/menu" className={navClass}>MENU</NavLink>
         <NavLink to="/work-at-lodid" className={navClass}>WORK AT LODID</NavLink>
         <NavLink to="/our-story" className={navClass}>OUR STORY</NavLink>
-        <NavLink to="/contact" className={navClass}>CONTACT</NavLink>
+        <button className={styles.navButton} onClick={() => onOpenModal('contact')}>CONTACT</button>
       </nav>
 
       <div className={styles.headerButtons}>
