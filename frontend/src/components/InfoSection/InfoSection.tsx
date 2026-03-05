@@ -1,23 +1,35 @@
+import { Link } from 'react-router-dom'
 import styles from './InfoSection.module.css'
 
 function InfoSection() {
   return (
     <section className={styles.infoSection}>
-      <div className={styles.infoCard}>
-        <h2>OUR MENU</h2>
-        <p>Explore our delicious range of burgers, sides, and more</p>
-        <button className={styles.infoBtn}>VIEW MENU</button>
-      </div>
+
       <div className={styles.infoCard}>
         <h2>LOCATION</h2>
-        <p>Find us at Carroll's Bar Beergarden</p>
-        <button className={styles.infoBtn}>FIND US</button>
+        <p>Find us at Carroll's on Dominick Street, Galway</p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Carroll's+Bar+Dominick+Street+Sligo+Ireland"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.infoBtn}
+        >
+          FIND US
+        </a>
       </div>
+
       <div className={styles.infoCard}>
         <h2>ABOUT US</h2>
         <p>Learn more about our story and values</p>
-        <button className={styles.infoBtn}>LEARN MORE</button>
+        <Link to="/our-story" className={styles.infoBtn}>LEARN MORE</Link>
       </div>
+
+      <div className={styles.infoCard}>
+        <h2>WORK AT LODID</h2>
+        <p>Join our team and be part of something delicious</p>
+        <Link to="/work-at-lodid" className={styles.infoBtn}>APPLY NOW</Link>
+      </div>
+
     </section>
   )
 }

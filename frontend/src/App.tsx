@@ -23,8 +23,8 @@ function App() {
   return (
     <HashRouter>
       <div className="app">
-        <Header isMenuOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} onOpenModal={openModal} />
-        <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onOpenModal={openModal} />
+        <Header isMenuOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} />
+        <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />

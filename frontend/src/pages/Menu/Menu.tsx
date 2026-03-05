@@ -239,6 +239,12 @@ function Menu() {
     return () => observer.disconnect()
   }, [])
 
+  // HashRouter owns the URL hash, so <a href="#id"> would be treated as a
+  // route change. Use scrollIntoView() instead — it respects scroll-margin-top.
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <main className={styles.page}>
 
@@ -253,13 +259,13 @@ function Menu() {
       <nav className={styles.categoryNav} aria-label="Jump to menu section">
         <div className={styles.navInner}>
           {menu.map(s => (
-            <a
+            <button
               key={s.id}
-              href={`#${s.id}`}
               className={`${styles.navLink} ${activeId === s.id ? styles.navLinkActive : ''}`}
+              onClick={() => scrollTo(s.id)}
             >
               {s.label}
-            </a>
+            </button>
           ))}
         </div>
       </nav>

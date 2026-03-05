@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom'
 import styles from './Footer.module.css'
 import type { ModalType } from '../InfoModal'
 
@@ -7,9 +6,6 @@ interface FooterProps {
 }
 
 function Footer({ onOpenModal }: FooterProps) {
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    isActive ? `${styles.footerLink} ${styles.footerLinkActive}` : styles.footerLink
-
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -17,9 +13,7 @@ function Footer({ onOpenModal }: FooterProps) {
           <p className={styles.copyright}>Copyright © LODID 2026 | Website by Luke Corcoran</p>
         </div>
         <div className={styles.footerLinks}>
-          <NavLink to="/catering" className={linkClass}>CATERING</NavLink>
-          <span className={styles.separator}>|</span>
-          <NavLink to="/work-at-lodid" className={linkClass}>WORK AT LODID</NavLink>
+          <button className={styles.footerButton} onClick={() => onOpenModal('contact')}>CONTACT</button>
           <span className={styles.separator}>|</span>
           <button className={styles.footerButton} onClick={() => onOpenModal('allergens')}>ALLERGENS</button>
           <span className={styles.separator}>|</span>

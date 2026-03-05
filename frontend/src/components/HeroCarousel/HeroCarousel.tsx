@@ -1,22 +1,34 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './HeroCarousel.module.css'
 
-const slides = [
+type Slide = {
+  title: string
+  description: string
+  buttonText: string
+  to?: string     // internal React Router route
+  href?: string   // external URL
+}
+
+const slides: Slide[] = [
   {
-    title: "THIS IS WHY YOUR\nDIET FAILED.",
-    description: "Worth every bite.",
-    buttonText: "READ MORE"
+    title: "DELICIOUS\nMENU.",
+    description: "Dawgs, burgers, fries, tenders and more. Something for everyone.",
+    buttonText: "VIEW MENU",
+    to: "/menu",
   },
   {
-    title: "CALORIES DON'T COUNT\nWHEN YOU'RE HAPPY.",
-    description: "Happiness guaranteed.",
-    buttonText: "ORDER ONLINE"
+    title: "CATERING\nSERVICES.",
+    description: "Let LODID bring the flavour to your next event. Get in touch today.",
+    buttonText: "CATERING",
+    to: "/catering",
   },
   {
-    title: "LIFE'S TOO SHORT\nFOR BORING FOOD.",
-    description: "Taste the difference.",
-    buttonText: "VIEW MENU"
-  }
+    title: "FIND\nUS.",
+    description: "In Carroll's on Dominick Street, Galway.",
+    buttonText: "GET DIRECTIONS",
+    href: "https://www.google.com/maps/search/?api=1&query=Carroll's+Bar+Dominick+Street+Sligo+Ireland",
+  },
 ]
 
 function HeroCarousel() {
@@ -24,6 +36,7 @@ function HeroCarousel() {
   const [isFading, setIsFading] = useState(false)
 
   const handleSlideChange = (index: number) => {
+    if (index === currentSlide) return
     setIsFading(true)
     setTimeout(() => {
       setCurrentSlide(index)
@@ -31,24 +44,36 @@ function HeroCarousel() {
     }, 200)
   }
 
+  const slide = slides[currentSlide]
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
         <div className={`${styles.heroText} ${isFading ? styles.fading : ''}`}>
           <h1>
-            {slides[currentSlide].title.split('\n').map((line, i) => (
+            {slide.title.split('\n').map((line, i) => (
               <span key={i}>
                 {line}
                 {i === 0 && <br />}
               </span>
             ))}
           </h1>
-          <p className={styles.heroDescription}>
-            {slides[currentSlide].description}
-          </p>
-          <button className={styles.readMoreBtn}>
-            {slides[currentSlide].buttonText}
-          </button>
+          <p className={styles.heroDescription}>{slide.description}</p>
+
+          {slide.to ? (
+            <Link to={slide.to} className={styles.readMoreBtn}>
+              {slide.buttonText}
+            </Link>
+          ) : (
+            <a
+              href={slide.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.readMoreBtn}
+            >
+              {slide.buttonText}
+            </a>
+          )}
         </div>
       </div>
 
@@ -58,7 +83,7 @@ function HeroCarousel() {
             key={index}
             className={`${styles.indicator} ${currentSlide === index ? styles.active : ''}`}
             onClick={() => handleSlideChange(index)}
-          ></span>
+          />
         ))}
       </div>
     </section>

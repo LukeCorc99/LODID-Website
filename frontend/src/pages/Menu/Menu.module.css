@@ -58,6 +58,12 @@
 }
 
 .navLink {
+  /* button reset */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  /* appearance */
   padding: 15px 22px;
   color: rgba(255, 255, 255, 0.55);
   font-size: 12px;
