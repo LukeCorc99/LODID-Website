@@ -27,7 +27,7 @@ const slides: Slide[] = [
     title: "FIND\nUS.",
     description: "In Carroll's on Dominick Street, Galway.",
     buttonText: "GET DIRECTIONS",
-    href: "https://www.google.com/maps/search/?api=1&query=Carroll's+Bar+Dominick+Street+Sligo+Ireland",
+    href: "https://www.google.com/maps/search/?api=1&query=Carroll's+Bar+Dominick+Street+Galway+Ireland",
   },
 ]
 

@@ -1,5 +1,6 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styles from './MobileMenu.module.css'
+import carrollsImg from '../../assets/carrolls.png'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -19,6 +20,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <NavLink to="/our-story" className={navClass} onClick={onClose}>OUR STORY</NavLink>
         <NavLink to="/catering" className={navClass} onClick={onClose}>CATERING</NavLink>
       </nav>
+      {/* Collection/Delivery buttons — commented out for future use
       <div className={styles.mobileButtons}>
         <Link to="/collection" className={`${styles.orderBtn} ${styles.collectionBtn}`} onClick={onClose}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -33,6 +35,8 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           DELIVERY
         </Link>
       </div>
+      */}
+      <img src={carrollsImg} alt="Carroll's Bar" className={styles.carrollsImg} />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import './App.css'
 import { useState } from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import MobileMenu from './components/MobileMenu'
 import Footer from './components/Footer'
 import InfoModal, { type ModalType } from './components/InfoModal'
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <HashRouter>
+      <ScrollToTop />
       <div className="app">
         <Header isMenuOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} />
         <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

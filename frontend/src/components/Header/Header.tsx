@@ -1,6 +1,7 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styles from './Header.module.css'
 import lodidLogo from '../../assets/lodid logo.png'
+import carrollsImg from '../../assets/carrolls.png'
 interface HeaderProps {
   isMenuOpen: boolean
   onMenuToggle: () => void
@@ -24,6 +25,7 @@ function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
         <NavLink to="/catering" className={navClass}>CATERING</NavLink>
       </nav>
 
+      {/* Collection/Delivery buttons — commented out for future use
       <div className={styles.headerButtons}>
         <Link to="/collection" className={`${styles.orderBtn} ${styles.collectionBtn}`}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -38,6 +40,8 @@ function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
           DELIVERY
         </Link>
       </div>
+      */}
+      <img src={carrollsImg} alt="Carroll's Bar" className={styles.carrollsImg} />
 
       <button
         className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`}

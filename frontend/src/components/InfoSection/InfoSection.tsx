@@ -9,7 +9,7 @@ function InfoSection() {
         <h2>LOCATION</h2>
         <p>Find us at Carroll's on Dominick Street, Galway</p>
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Carroll's+Bar+Dominick+Street+Sligo+Ireland"
+          href="https://www.google.com/maps/search/?api=1&query=Carroll's+Bar+Dominick+Street+Galway+Ireland"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.infoBtn}

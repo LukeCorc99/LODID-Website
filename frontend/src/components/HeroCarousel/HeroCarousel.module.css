@@ -4,8 +4,11 @@
   position: relative;
   overflow: hidden;
   min-height: 600px;
-  padding: 60px 40px;
+  padding: 60px 40px 90px;
   margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .heroContent {

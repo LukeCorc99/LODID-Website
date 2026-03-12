@@ -12,7 +12,7 @@ const chapters = [
     number: '02',
     year: '2022',
     title: 'FINDING A HOME',
-    body: "Carroll's Bar Beergarden on Dominick Street became the perfect base. A spot already loved by Sligo, with a crowd who appreciated good food and good times. We set up, fired up the grill, and got to work."
+    body: "Carroll's Bar Beergarden on Dominick Street became the perfect base. A spot already loved by Galway, with a crowd who appreciated good food and good times. We set up, fired up the grill, and got to work."
   },
   {
     number: '03',
@@ -24,7 +24,7 @@ const chapters = [
     number: '04',
     year: '2024',
     title: 'THE WORD SPREADS',
-    body: "We didn't advertise. We didn't need to. People came back, and they brought friends. The queues got longer, the weekend specials sold out faster, and Sligo started to take notice. LODID became a habit."
+    body: "We didn't advertise. We didn't need to. People came back, and they brought friends. The queues got longer, the weekend specials sold out faster, and Galway started to take notice. LODID became a habit."
   },
   {
     number: '05',
@@ -106,7 +106,7 @@ function OurStory() {
       <section className={styles.closingSection}>
         <p className={styles.closingQuote}>"We're not done yet."</p>
         <p className={styles.closingText}>
-          Come find us at Carroll's Bar Beergarden, Dominick Street, Sligo.
+          Come find us at Carroll's Bar Beergarden, Dominick Street, Galway.
         </p>
       </section>
 
