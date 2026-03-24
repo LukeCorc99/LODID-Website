@@ -10,7 +10,7 @@ function Footer({ onOpenModal }: FooterProps) {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerLeft}>
-          <p className={styles.copyright}>Copyright © LODID 2026 | Website by Luke Corcoran</p>
+          <p className={styles.copyright}>© 2026, LODID</p>
         </div>
         <div className={styles.footerLinks}>
           <button className={styles.footerButton} onClick={() => onOpenModal('contact')}>CONTACT</button>

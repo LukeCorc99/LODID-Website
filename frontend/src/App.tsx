@@ -9,7 +9,6 @@ import InfoModal, { type ModalType } from './components/InfoModal'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import WorkAtLodid from './pages/WorkAtLodid'
-import OurStory from './pages/OurStory'
 import Catering from './pages/Catering'
 import Collection from './pages/Collection'
 import Delivery from './pages/Delivery'
@@ -28,10 +27,9 @@ function App() {
         <Header isMenuOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} />
         <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home onOpenModal={openModal} />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/work-at-lodid" element={<WorkAtLodid />} />
-          <Route path="/our-story" element={<OurStory />} />
           <Route path="/catering" element={<Catering />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/delivery" element={<Delivery />} />

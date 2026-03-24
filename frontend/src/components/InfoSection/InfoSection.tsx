@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
+import type { ModalType } from '../InfoModal'
 import styles from './InfoSection.module.css'
 
-function InfoSection() {
+interface InfoSectionProps {
+  onOpenModal: (type: ModalType) => void
+}
+
+function InfoSection({ onOpenModal }: InfoSectionProps) {
   return (
     <section className={styles.infoSection}>
 
@@ -19,9 +24,9 @@ function InfoSection() {
       </div>
 
       <div className={styles.infoCard}>
-        <h2>ABOUT US</h2>
-        <p>Learn more about our story and values</p>
-        <Link to="/our-story" className={styles.infoBtn}>LEARN MORE</Link>
+        <h2>OPENING TIMES</h2>
+        <p>Wednesday to Sunday, from 5pm. Saturday from 3pm.</p>
+        <button className={styles.infoBtn} onClick={() => onOpenModal('hours')}>VIEW HOURS</button>
       </div>
 
       <div className={styles.infoCard}>

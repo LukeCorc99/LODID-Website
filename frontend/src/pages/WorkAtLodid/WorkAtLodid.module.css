@@ -44,7 +44,7 @@
 
 .heroBtn {
   margin-top: 10px;
-  display: inline-block;
+  display: none;
   background: var(--primary-orange);
   color: var(--white);
   text-decoration: none;
@@ -297,7 +297,7 @@
   background: var(--primary-orange);
   padding: 80px 40px;
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 14px;
@@ -333,6 +333,12 @@
 .ctaBtn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ctaEmail {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
 }
 
 /* ── Responsive ──────────────────────────────── */
@@ -400,5 +406,15 @@
 
   .ctaTitle {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBtn {
+    display: inline-block;
+  }
+
+  .ctaSection {
+    display: flex;
   }
 }

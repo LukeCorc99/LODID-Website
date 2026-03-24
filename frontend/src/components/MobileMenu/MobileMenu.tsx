@@ -17,10 +17,9 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <NavLink to="/" end className={navClass} onClick={onClose}>HOME</NavLink>
         <NavLink to="/menu" className={navClass} onClick={onClose}>MENU</NavLink>
         <NavLink to="/work-at-lodid" className={navClass} onClick={onClose}>WORK AT LODID</NavLink>
-        <NavLink to="/our-story" className={navClass} onClick={onClose}>OUR STORY</NavLink>
         <NavLink to="/catering" className={navClass} onClick={onClose}>CATERING</NavLink>
       </nav>
-      {/* Collection/Delivery buttons — commented out for future use
+      {/* Collection/Delivery buttons - commented out for future use
       <div className={styles.mobileButtons}>
         <Link to="/collection" className={`${styles.orderBtn} ${styles.collectionBtn}`} onClick={onClose}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

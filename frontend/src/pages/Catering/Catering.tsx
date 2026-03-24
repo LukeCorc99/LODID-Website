@@ -8,7 +8,7 @@ const packages = [
       </svg>
     ),
     label: 'PRIVATE PARTIES',
-    description: 'Birthdays, anniversaries, celebrations — whatever the occasion, we bring the feast. Minimum 20 guests.',
+    description: 'Birthdays, anniversaries, celebrations - whatever the occasion, we bring the feast. Minimum 20 guests.',
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const steps = [
   {
     number: '01',
     title: 'Get in Touch',
-    description: 'Drop us a message with your date, headcount, and what you have in mind.',
+    description: 'Email us at bookings@carrollsbar.ie with your date, time, headcount, and preferred seating area.',
   },
   {
     number: '02',
@@ -58,34 +58,17 @@ function Catering() {
           <p className={styles.eyebrow}>FEED THE CROWD</p>
           <h1 className={styles.heroTitle}>CATERING</h1>
           <p className={styles.heroSubtitle}>
-            LODID burgers at your event. Seriously good food, zero stress.
+            LODID at your event. Seriously good food, zero stress.
           </p>
-          <a href="mailto:lodid@carrollsbar.ie" className={styles.heroBtn}>GET A QUOTE</a>
-        </div>
-      </section>
-
-      {/* Packages */}
-      <section className={styles.packagesSection}>
-        <div className={styles.sectionHeader}>
-          <p className={styles.sectionEyebrow}>WHAT WE OFFER</p>
-          <h2 className={styles.sectionTitle}>We Cater For Everything</h2>
-        </div>
-        <div className={styles.packagesGrid}>
-          {packages.map((pkg) => (
-            <div key={pkg.label} className={styles.packageCard}>
-              <div className={styles.packageIcon}>{pkg.icon}</div>
-              <h3 className={styles.packageLabel}>{pkg.label}</h3>
-              <p className={styles.packageDesc}>{pkg.description}</p>
-            </div>
-          ))}
+          <a href="mailto:bookings@carrollsbar.ie" className={styles.heroBtn}>GET A QUOTE</a>
         </div>
       </section>
 
       {/* How it works */}
       <section className={styles.processSection}>
         <div className={styles.sectionHeader}>
-          <p className={styles.sectionEyebrowLight}>SIMPLE AS THAT</p>
-          <h2 className={styles.sectionTitleLight}>How It Works</h2>
+          <p className={styles.sectionEyebrow}>SIMPLE AS THAT</p>
+          <h2 className={styles.sectionTitle}>How It Works</h2>
         </div>
         <div className={styles.stepsGrid}>
           {steps.map((step, i) => (
@@ -99,11 +82,28 @@ function Catering() {
         </div>
       </section>
 
+      {/* Packages */}
+      <section className={styles.packagesSection}>
+        <div className={styles.sectionHeader}>
+          <p className={styles.sectionEyebrowLight}>WHAT WE OFFER</p>
+          <h2 className={styles.sectionTitleLight}>We Cater For Everything</h2>
+        </div>
+        <div className={styles.packagesGrid}>
+          {packages.map((pkg) => (
+            <div key={pkg.label} className={styles.packageCard}>
+              <div className={styles.packageIcon}>{pkg.icon}</div>
+              <h3 className={styles.packageLabel}>{pkg.label}</h3>
+              <p className={styles.packageDesc}>{pkg.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className={styles.ctaSection}>
         <p className={styles.ctaTitle}>Ready to make it happen?</p>
-        <p className={styles.ctaSubtitle}>Reach out and we'll get back to you within 24 hours.</p>
-        <a href="mailto:lodid@carrollsbar.ie" className={styles.ctaBtn}>CONTACT US</a>
+        <p className={styles.ctaSubtitle}>Reach out and we'll get back to you as soon as possible.</p>
+        <a href="mailto:bookings@carrollsbar.ie" className={styles.ctaBtn}>CONTACT US</a>
       </section>
 
     </main>

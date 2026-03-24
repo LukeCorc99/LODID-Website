@@ -93,7 +93,7 @@ const menu: Section[] = [
       },
       {
         name: 'SPICE BAG FRIES',
-        desc: 'With Vegan Curry Sauce — ADD Shredded Chicken €2',
+        desc: 'With Vegan Curry Sauce - ADD Shredded Chicken €2',
         allergens: '1, 3, 5, 6, 7, 8, 9, 10, 12',
         price: '7',
       },
@@ -120,7 +120,7 @@ const menu: Section[] = [
     id: 'tenders',
     label: 'TENDERS',
     title: 'TENDERS',
-    note: 'Tossed in a sauce of your choice. Veg option available — mushroom fritters tossed in below sauces.',
+    note: 'Tossed in a sauce of your choice. Veg option available - mushroom fritters tossed in below sauces.',
     image: chickenImg,
     items: [
       {
@@ -240,7 +240,7 @@ function Menu() {
   }, [])
 
   // HashRouter owns the URL hash, so <a href="#id"> would be treated as a
-  // route change. Use scrollIntoView() instead — it respects scroll-margin-top.
+  // route change. Use scrollIntoView() instead - it respects scroll-margin-top.
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }

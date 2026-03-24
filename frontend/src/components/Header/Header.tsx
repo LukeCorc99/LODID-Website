@@ -21,11 +21,10 @@ function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
         <NavLink to="/" end className={navClass}>HOME</NavLink>
         <NavLink to="/menu" className={navClass}>MENU</NavLink>
         <NavLink to="/work-at-lodid" className={navClass}>WORK AT LODID</NavLink>
-        <NavLink to="/our-story" className={navClass}>OUR STORY</NavLink>
         <NavLink to="/catering" className={navClass}>CATERING</NavLink>
       </nav>
 
-      {/* Collection/Delivery buttons — commented out for future use
+      {/* Collection/Delivery buttons - commented out for future use
       <div className={styles.headerButtons}>
         <Link to="/collection" className={`${styles.orderBtn} ${styles.collectionBtn}`}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

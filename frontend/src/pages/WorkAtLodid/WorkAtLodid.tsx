@@ -3,13 +3,13 @@ import styles from './WorkAtLodid.module.css'
 const steps = [
   {
     number: '01',
-    title: 'Send a Message',
-    desc: 'Email us with your name, what role interests you, and a little about yourself. No CV required.',
+    title: 'Introduce Yourself',
+    desc: 'Email us at info@carrollsbar.ie with your name, what role interests you, and your CV. Alternatively, feel free to drop in and say hi.',
   },
   {
     number: '02',
     title: 'Come In for a Chat',
-    desc: "We'll invite you in for a casual conversation — no formal interview, just getting to know each other.",
+    desc: "We'll invite you in for a casual conversation - no formal interview, just getting to know each other.",
   },
   {
     number: '03',
@@ -28,10 +28,9 @@ function WorkAtLodid() {
           <p className={styles.eyebrow}>JOIN THE TEAM</p>
           <h1 className={styles.heroTitle}>WORK AT LODID</h1>
           <p className={styles.heroSubtitle}>
-            We hire for attitude and train for skill. If you care about quality
-            and enjoy a good shift, you'll fit right in.
+            Interested in joining the team?
           </p>
-          <a href="mailto:lodid@carrollsbar.ie" className={styles.heroBtn}>
+          <a href="mailto:info@carrollsbar.ie" className={styles.heroBtn}>
             APPLY NOW
           </a>
         </div>
@@ -58,9 +57,9 @@ function WorkAtLodid() {
       <section className={styles.ctaSection}>
         <p className={styles.ctaTitle}>Sound like your kind of place?</p>
         <p className={styles.ctaSubtitle}>
-          Drop us a line — we'd love to hear from you.
+          Drop us a line - we'd love to hear from you.
         </p>
-        <a href="mailto:lodid@carrollsbar.ie" className={styles.ctaBtn}>
+        <a href="mailto:info@carrollsbar.ie" className={styles.ctaBtn}>
           GET IN TOUCH
         </a>
       </section>

@@ -43,7 +43,7 @@
 
 .heroBtn {
   margin-top: 10px;
-  display: inline-block;
+  display: none;
   background: var(--white);
   color: var(--dark-navy);
   text-decoration: none;
@@ -99,7 +99,7 @@
 
 /* ── Packages ────────────────────────────────── */
 .packagesSection {
-  background: var(--light-cream);
+  background: var(--dark-navy);
   padding: 80px 40px;
 }
 
@@ -112,7 +112,8 @@
 }
 
 .packageCard {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 48px 36px;
   text-align: center;
@@ -120,13 +121,12 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 4px 20px rgba(45, 49, 66, 0.07);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .packageCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(45, 49, 66, 0.12);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .packageIcon {
@@ -149,19 +149,19 @@
 .packageLabel {
   font-size: 15px;
   font-weight: 800;
-  color: var(--dark-navy);
+  color: var(--white);
   letter-spacing: 1px;
 }
 
 .packageDesc {
   font-size: 15px;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
 }
 
 /* ── Process ─────────────────────────────────── */
 .processSection {
-  background: var(--dark-navy);
+  background: var(--light-cream);
   padding: 80px 40px;
 }
 
@@ -191,7 +191,7 @@
   right: -1px;
   width: 2px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(45, 49, 66, 0.15);
 }
 
 .stepNumber {
@@ -206,13 +206,13 @@
 .stepTitle {
   font-size: 20px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--dark-navy);
   letter-spacing: 0.3px;
 }
 
 .stepDesc {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-light);
   line-height: 1.7;
 }
 
@@ -221,7 +221,7 @@
   background: var(--light-cream);
   padding: 80px 40px;
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 14px;
@@ -252,6 +252,12 @@
   border-radius: 8px;
   transition: all 0.3s;
   box-shadow: 0 6px 16px rgba(255, 107, 53, 0.35);
+}
+
+.ctaEmail {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.5px;
 }
 
 .ctaBtn:hover {
@@ -314,5 +320,15 @@
 
   .ctaTitle {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBtn {
+    display: inline-block;
+  }
+
+  .ctaSection {
+    display: flex;
   }
 }
